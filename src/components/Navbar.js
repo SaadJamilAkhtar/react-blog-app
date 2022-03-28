@@ -5,7 +5,7 @@ function Navbar(props) {
             <h1>BloG</h1>
             <div className="links">
                 <a href="/">Home</a>
-                <a href="/create">New Blog</a>
+                <a href="/create" className={"button"}>New Blog</a>
             </div>
         </nav>
     );
