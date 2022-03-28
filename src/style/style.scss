@@ -59,3 +59,15 @@
   margin: 40px auto;
   padding: 20px;
 }
+
+.blog-preview{
+  width: 80%;
+  border: 2px solid #f1356d;
+  border-radius: 1rem;
+  padding: 2rem;
+  margin: 1rem;
+  transition: all 0.25s ease-out;
+  &:hover{
+    transform: perspective(1000px) translateZ(70px);
+  }
+}
