@@ -53,9 +53,10 @@
   padding: 2rem;
   margin: 1rem;
   transition: all 0.25s ease-out;
+  cursor: pointer;
 }
 .blog-preview:hover {
-  transform: perspective(1000px) translateZ(70px);
+  transform: perspective(1000px) translateZ(35px);
 }
 
 .page-heading {
