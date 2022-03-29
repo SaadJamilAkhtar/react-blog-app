@@ -94,4 +94,9 @@
   height: 50vh;
 }
 
+.error h2 {
+  color: #ee2f2f;
+  padding-left: 1rem;
+}
+
 /*# sourceMappingURL=style.css.map */
