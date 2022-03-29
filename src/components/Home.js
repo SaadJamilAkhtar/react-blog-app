@@ -2,34 +2,11 @@ import React from 'react';
 import {FaTimesCircle} from "react-icons/fa";
 import {useState, useEffect} from "react";
 import BlogList from "./BlogList";
-
+import useFetch from "../hooks/useFetch";
 
 function Home(props) {
 
-    const [blogs, setBlogs] = useState([]);
-    const [isLoading, setIsLoading] = useState(true);
-    const [error, setError] = useState(null);
-
-    useEffect(() => {
-        getData();
-    }, [])
-
-    const getData = async () => {
-        setIsLoading(true);
-        try {
-            const data = await fetch('http://localhost:5000/blogss');
-            if (!data.ok) {
-                throw new Error("Could not Fetch data.")
-            } else {
-                setError(null);
-                setBlogs(await data.json());
-            }
-        } catch (e) {
-            setIsLoading(false);
-            setError(e.message);
-        }
-        setIsLoading(false);
-    }
+    const {data: blogs, setData: setBlogs, isLoading, error} = useFetch('http://localhost:5000/blogs');
 
     const delBlog = (id) => {
         setBlogs(blogs.filter(blog => blog.id !== id));
