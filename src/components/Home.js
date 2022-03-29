@@ -1,6 +1,5 @@
 import React from 'react';
 import {FaTimesCircle} from "react-icons/fa";
-import {useState, useEffect} from "react";
 import BlogList from "./BlogList";
 import useFetch from "../hooks/useFetch";
 
