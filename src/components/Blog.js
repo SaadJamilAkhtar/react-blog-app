@@ -23,12 +23,13 @@ function Blog(props) {
 
             {/*Loading Block*/}
             {isLoading && <div className={"loading"}><h2>Loading Data...</h2></div>}
-            {blog && !error && (<div className="blog-content">
+            {/*Blog Block*/}
+            {blog && !error && !isLoading && (<div className="blog-content">
                 <div className="blog-title">
-                    <h2>{blog.title}</h2>
+                    <h1>{blog.title}</h1>
                 </div>
                 <div className="blog-author">
-                    <p>{blog.author}</p>
+                    <p>by : <span>{blog.author}</span></p>
                 </div>
                 <div className="blog-body">
                     <p>{blog.body}</p>
