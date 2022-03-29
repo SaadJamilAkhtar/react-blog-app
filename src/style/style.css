@@ -52,7 +52,7 @@
   border-radius: 1rem;
   padding: 2rem;
   margin: 1rem;
-  transition: all 0.25s ease-out;
+  transition: all 0.2s ease-out;
   cursor: pointer;
 }
 .blog-preview:hover {
