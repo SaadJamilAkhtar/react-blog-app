@@ -1,17 +1,22 @@
 import React from 'react';
-import {useState} from "react";
+import {useState, useEffect} from "react";
 import BlogList from "./BlogList";
 
 function Home(props) {
 
-    const [blogs, setBlogs] = useState([
-        {title: "My new website", body: "lorem ipsum...", author: 'mario', id: 1},
-        {title: "Welcome party!", body: "lorem ipsum...", author: 'yoshi', id: 2},
-        {title: "Web dev top tips!", body: "lorem ipsum...", author: 'mario', id: 3}]);
+    const [blogs, setBlogs] = useState([]);
 
     const delBlog = (id) => {
         setBlogs(blogs.filter(blog => blog.id !== id));
     }
+
+    useEffect(() => {
+        const getData = async () => {
+            const data = await fetch('http://localhost:5000/blogs');
+            setBlogs(await data.json());
+        }
+        getData()
+    },[])
     return (
         <div className="home">
             <div className={"page-heading"}>
