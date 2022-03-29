@@ -65,10 +65,16 @@
   padding: 2rem;
   margin: 1rem;
   transition: all 0.20s ease-out;
-  cursor: pointer;
 
   &:hover {
-    transform: perspective(1000px) translateZ(35px);
+    transform: perspective(1000px) translateZ(25px);
+  }
+
+  .btn-container{
+    display: flex;
+    justify-content: right;
+
+
   }
 }
 
@@ -80,4 +86,20 @@
   border-bottom: 1px solid #e5e2e2;
   margin-bottom: 2rem;
 
+}
+
+.btn-danger{
+
+  padding: 0.75rem 1.25rem 0.75rem 1.25rem;
+  border: 2px solid #f31c1c;
+  border-radius: 2rem;
+  color: #f31c1c;
+  font-weight: bolder;
+  background: white;
+
+  &:hover{
+    background: #f31c1c;
+    color: white;
+    cursor: pointer;
+  }
 }
