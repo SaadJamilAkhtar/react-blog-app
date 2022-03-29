@@ -33,7 +33,7 @@ function Home(props) {
             {isLoading && <div className={"loading"}><h2>Loading Data...</h2></div>}
 
             {/*Blog block*/}
-            {blogs && blogs.map(blog => {
+            {blogs && !error && blogs.map(blog => {
                 return (
                     <BlogList key={blog.id} blog={blog} onDelete={delBlog}/>
                 )
