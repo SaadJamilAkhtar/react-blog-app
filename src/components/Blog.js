@@ -31,8 +31,8 @@ function Blog(props) {
                 <div className="blog-author">
                     <p>by : <span>{blog.author}</span></p>
                 </div>
-                <div className="blog-body">
-                    {blog.body}
+                <div className="blog-body" dangerouslySetInnerHTML={{__html:blog.body}}>
+
                 </div>
             </div>)}
 
