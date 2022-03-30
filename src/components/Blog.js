@@ -26,13 +26,13 @@ function Blog(props) {
             {/*Blog Block*/}
             {blog && !error && !isLoading && (<div className="blog-content">
                 <div className="blog-title">
-                    <h1>{blog.title}</h1>
+                    <h2>{blog.title}</h2>
                 </div>
                 <div className="blog-author">
                     <p>by : <span>{blog.author}</span></p>
                 </div>
                 <div className="blog-body">
-                    <p>{blog.body}</p>
+                    {blog.body}
                 </div>
             </div>)}
 
