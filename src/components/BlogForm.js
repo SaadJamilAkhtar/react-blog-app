@@ -1,6 +1,9 @@
 import React, {useState} from 'react';
-
+import {useNavigate} from 'react-router-dom'
 function BlogForm(props) {
+
+    const navigate = useNavigate();
+
     const [data, setData] = useState({
         title: "",
         body: "",
@@ -29,13 +32,13 @@ function BlogForm(props) {
                 },
                 body: JSON.stringify(data)
             })
-
         setIsPending(false);
         setData({
             title: "",
             body: "",
             author: "mario"
         });
+        navigate('/');
 
     }
 
