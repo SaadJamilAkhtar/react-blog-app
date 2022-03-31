@@ -172,4 +172,27 @@
   cursor: pointer;
 }
 
+.not-found h2, .not-found p, .not-found a {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+.not-found h2 {
+  font-size: 4rem;
+  margin-bottom: 0.5rem;
+}
+.not-found p {
+  font-size: 2rem;
+  margin: 0.5rem;
+}
+.not-found a {
+  font-size: 1.5rem;
+  text-decoration: none;
+  margin-top: 5rem;
+}
+.not-found a .icon {
+  padding-right: 0.5rem;
+  font-size: 2rem;
+}
+
 /*# sourceMappingURL=style.css.map */
