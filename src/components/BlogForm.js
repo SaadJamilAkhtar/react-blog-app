@@ -7,6 +7,8 @@ function BlogForm(props) {
         author: "mario"
     });
 
+    const [isPending, setIsPending] = useState(false);
+
     const changeHandler = (e) => {
         setData({
             ...data,
@@ -16,14 +18,19 @@ function BlogForm(props) {
 
     const submit = async (e) => {
         e.preventDefault();
+
+        setIsPending(true);
+
         const blog = await fetch('http://localhost:5000/blogs',
             {
                 method: 'POST',
                 headers: {
-                    "Content-Type" : "application/json"
+                    "Content-Type": "application/json"
                 },
                 body: JSON.stringify(data)
             })
+
+        setIsPending(false);
         setData({
             title: "",
             body: "",
@@ -58,7 +65,7 @@ function BlogForm(props) {
                     <option value="yoshi">yoshi</option>
                 </select>
 
-                <button type={"submit"}>Add Blog</button>
+                {!isPending ? <button type={"submit"}>Add Blog</button> : <button disabled>Adding Blog...</button>}
             </form>
         </div>
     );
