@@ -12,7 +12,10 @@ function Home(props) {
         error
     } = useFetch('http://localhost:5000/blogs?_sort=id&_order=desc');
 
-    const delBlog = (id) => {
+    const delBlog = async (id) => {
+        const data = await fetch('http://localhost:5000/blogs/' + id, {
+            method : "DELETE"
+        })
         setBlogs(blogs.filter(blog => blog.id !== id));
     }
 
