@@ -5,7 +5,12 @@ import useFetch from "../hooks/useFetch";
 
 function Home(props) {
 
-    const {data: blogs, setData: setBlogs, isLoading, error} = useFetch('http://localhost:5000/blogs');
+    const {
+        data: blogs,
+        setData: setBlogs,
+        isLoading,
+        error
+    } = useFetch('http://localhost:5000/blogs?_sort=id&_order=desc');
 
     const delBlog = (id) => {
         setBlogs(blogs.filter(blog => blog.id !== id));
@@ -22,7 +27,7 @@ function Home(props) {
             {error &&
             <div className="loading error">
                 <FaTimesCircle style={
-                    {color:"#ee2f2f",fontSize: '2rem'}
+                    {color: "#ee2f2f", fontSize: '2rem'}
                 }/>
                 <h2>
                     {error}

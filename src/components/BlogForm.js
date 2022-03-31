@@ -14,8 +14,21 @@ function BlogForm(props) {
         })
     }
 
-    const submit = (e) => {
+    const submit = async (e) => {
         e.preventDefault();
+        const blog = await fetch('http://localhost:5000/blogs',
+            {
+                method: 'POST',
+                headers: {
+                    "Content-Type" : "application/json"
+                },
+                body: JSON.stringify(data)
+            })
+        setData({
+            title: "",
+            body: "",
+            author: "mario"
+        });
 
     }
 
