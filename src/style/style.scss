@@ -224,10 +224,23 @@
     font-size: 1.5rem;
     text-decoration: none;
     margin-top: 5rem;
+    color: #f1356d;
     .icon{
       padding-right: 0.5rem;
       font-size: 2rem;
     }
+    &:hover{
+      text-decoration: underline;
+    }
   }
 
+}
+
+.main-error{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  h2{
+    justify-content: left;
+  }
 }
